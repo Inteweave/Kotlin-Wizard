@@ -19,7 +19,7 @@ class Wizard<ScreenIdentifier, WizardEvent>(
      * An event was raised on the current screen
      *
      * @param event The event that occurred on the current screen
-     * @return The {link ScreenIdentifier} for the event
+     * @return The [ScreenIdentifier] for the event
      */
     fun onEvent(event: WizardEvent, currentScreen: ScreenIdentifier): ScreenIdentifier {
         val navigation = screenNavigation.filter { it.event == event && it.onScreen == currentScreen }
