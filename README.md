@@ -10,7 +10,7 @@ For example, we have the following steps to choose a snack:
 ```
 - choose snack
    - icecream
-     - cone
+     - scoop
      - soft serve
        - choc dip
        - sprinkles
@@ -22,7 +22,7 @@ The UX flow is coded as:
 ScreenNavigation(SnacksScreen.SELECT_TYPE, SnacksEvent.ICE_CREAM_CHOSEN, SnacksScreen.ICE_CREAM_SERVE),
 
 ScreenNavigation(SnacksScreen.ICE_CREAM_SERVE, SnacksEvent.SOFT_SERVE_CHOSEN, SnacksScreen.CHOOSE_TOPPING),
-ScreenNavigation(SnacksScreen.ICE_CREAM_SERVE, SnacksEvent.CONE_CHOSEN, SnacksScreen.CONE),
+ScreenNavigation(SnacksScreen.ICE_CREAM_SERVE, SnacksEvent.SCOOP_CHOSEN, SnacksScreen.SCOOP),
 
 ScreenNavigation(SnacksScreen.CHOOSE_TOPPING, SnacksEvent.CHOC_DIP_CHOSEN, SnacksScreen.SOFT_SERVE_CHOC_DIP),
 ScreenNavigation(SnacksScreen.CHOOSE_TOPPING, SnacksEvent.SPRINKLES_CHOSEN, SnacksScreen.SOFT_SERVE_SPRINKLES),

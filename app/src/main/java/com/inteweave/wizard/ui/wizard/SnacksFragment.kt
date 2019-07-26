@@ -1,4 +1,4 @@
-package com.inteweave.wizard.ui.wizardhost
+package com.inteweave.wizard.ui.wizard
 
 
 import android.content.Context

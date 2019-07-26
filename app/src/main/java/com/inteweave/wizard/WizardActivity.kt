@@ -6,10 +6,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProviders
 import com.inteweave.wizard.snacks.wizard.SnacksEvent
+import com.inteweave.wizard.snacks.wizard.SnacksScreen
 import com.inteweave.wizard.snacks.wizard.SnacksViewModel
-import com.inteweave.wizard.ui.wizardhost.HomeFragment
-import com.inteweave.wizard.ui.wizardhost.SnacksFragment
-import com.inteweave.wizard.ui.wizardhost.SnacksFragmentPresenter
+import com.inteweave.wizard.ui.wizard.HomeFragment
+import com.inteweave.wizard.ui.wizard.SnacksFragment
+import com.inteweave.wizard.ui.wizard.SnacksFragmentPresenter
 
 /**
  * Main activity is responsible for displaying the fragments of the wizard.
@@ -39,24 +40,15 @@ class WizardActivity : AppCompatActivity(),
     }
 
     /**
-     * Let the wizard know that the user has pressed the back button
-     */
-    override fun onBackPressed() {
-        model.wizard.back()
-        super.onBackPressed()
-    }
-
-    /**
      * Perhaps in a production app the event would be handled by the View Model, which is
      * really the wizard controller.
      * I would also expect to see factory methods to create the fragment to display.
      */
-    override fun onSnacksEvent(event: SnacksEvent) {
+    override fun onSnacksEvent(event: SnacksEvent, currentScreen: SnacksScreen) {
         if (event == SnacksEvent.FINISH) {
             supportFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
-            model.wizard.reset()
         } else {
-            val screen = model.wizard.onEvent(event)
+            val screen = model.wizard.onEvent(event, currentScreen)
             showScreen(SnacksFragment.newInstance(screen))
         }
     }
@@ -65,7 +57,7 @@ class WizardActivity : AppCompatActivity(),
      * The user has selected to start the wizard. Show the initial screen.
      */
     override fun onStartWizard() {
-        showScreen(SnacksFragment.newInstance(model.wizard.currentScreen))
+        showScreen(SnacksFragment.newInstance(model.wizard.startScreen))
     }
 
     /**

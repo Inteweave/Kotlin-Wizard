@@ -13,7 +13,7 @@ import android.os.Parcelable
 enum class SnacksScreen : Parcelable {
     SELECT_TYPE,
     ICE_CREAM_SERVE,
-    CONE,
+    SCOOP,
     CHOOSE_TOPPING,
     SOFT_SERVE_CHOC_DIP,
     SOFT_SERVE_SPRINKLES,

@@ -10,13 +10,13 @@
 
     <!-- Ice Cream Serve -->
     <string name="ice_cream_label">Ice Cream\n\nSelect serve</string>
-    <string name="ice_cream_button1">Cone</string>
+    <string name="ice_cream_button1">Scoop</string>
     <string name="ice_cream_button2">Soft Serve</string>
 
-    <!-- Cone -->
-    <string name="cone_label">Cone selected</string>
-    <string name="cone_button1">Finish</string>
-    <string name="cone_button2"/>
+    <!-- Scoop -->
+    <string name="scoop_label">Scoop selected</string>
+    <string name="scoop_button1">Finish</string>
+    <string name="scoop_button2"/>
 
     <!-- Choose Topping -->
     <string name="topping_label">Select a topping</string>

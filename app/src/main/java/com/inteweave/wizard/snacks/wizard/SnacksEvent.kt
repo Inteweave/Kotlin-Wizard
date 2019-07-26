@@ -9,7 +9,7 @@ package com.inteweave.wizard.snacks.wizard
 enum class SnacksEvent {
     FINISH, // common to multiple screens
     ICE_CREAM_CHOSEN,
-    CONE_CHOSEN,
+    SCOOP_CHOSEN,
     SOFT_SERVE_CHOSEN,
     CHOC_DIP_CHOSEN,
     SPRINKLES_CHOSEN,

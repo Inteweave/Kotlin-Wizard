@@ -1,4 +1,4 @@
-package com.inteweave.wizard.ui.wizardhost
+package com.inteweave.wizard.ui.wizard
 
 import android.content.Context
 import com.inteweave.wizard.R
@@ -14,10 +14,10 @@ import com.inteweave.wizard.snacks.wizard.SnacksScreen
  * @author W M Milward
  * Copyright © 2019 Inteweave. All rights reserved.
  */
-class SnacksFragmentPresenter(screen: SnacksScreen, context: Context, private val listener: EventListener) {
+class SnacksFragmentPresenter(private val screen: SnacksScreen, context: Context, private val listener: EventListener) {
 
     interface EventListener {
-        fun onSnacksEvent(event: SnacksEvent)
+        fun onSnacksEvent(event: SnacksEvent, currentScreen: SnacksScreen)
     }
 
     val screenContents: ScreenContents
@@ -40,16 +40,16 @@ class SnacksFragmentPresenter(screen: SnacksScreen, context: Context, private va
                     R.string.ice_cream_label,
                     R.string.ice_cream_button1,
                     R.string.ice_cream_button2,
-                    SnacksEvent.CONE_CHOSEN,
+                    SnacksEvent.SCOOP_CHOSEN,
                     SnacksEvent.SOFT_SERVE_CHOSEN,
                     false
                 )
-            SnacksScreen.CONE ->
+            SnacksScreen.SCOOP ->
                 screenContents = ScreenContents(
                     context,
-                    R.string.cone_label,
-                    R.string.cone_button1,
-                    R.string.cone_button2,
+                    R.string.scoop_label,
+                    R.string.scoop_button1,
+                    R.string.scoop_button2,
                     SnacksEvent.FINISH,
                     SnacksEvent.FINISH,
                     true
@@ -98,10 +98,10 @@ class SnacksFragmentPresenter(screen: SnacksScreen, context: Context, private va
     }
 
     fun onButton1Pressed() {
-        listener.onSnacksEvent(screenContents.button1Event)
+        listener.onSnacksEvent(screenContents.button1Event, screen)
     }
 
     fun onButton2Pressed() {
-        listener.onSnacksEvent(screenContents.button2Event)
+        listener.onSnacksEvent(screenContents.button2Event, screen)
     }
 }
