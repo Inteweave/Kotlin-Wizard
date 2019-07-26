@@ -75,5 +75,4 @@ class WizardActivity : AppCompatActivity(),
             .addToBackStack(null)
             .commit()
     }
-
 }

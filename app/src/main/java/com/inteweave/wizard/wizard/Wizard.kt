@@ -29,5 +29,4 @@ class Wizard<ScreenIdentifier, WizardEvent>(
             else -> throw WizardError("Multiple definitions for screen $currentScreen")
         }
     }
-
 }

@@ -1,6 +1,5 @@
 package com.inteweave.wizard.ui.wizard
 
-
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -24,7 +23,8 @@ class SnacksFragment : Fragment() {
     private var presenter: SnacksFragmentPresenter? = null
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
